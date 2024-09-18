@@ -1,9 +1,9 @@
-import "./App.css";
+import BodyComponent from "./components/BodyComponent";
 
 function App() {
   return (
     <div className="App">
-      <h1>Film Flix</h1>
+      <BodyComponent />
     </div>
   );
 }

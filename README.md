@@ -2,6 +2,7 @@
 
 - create-react-app
 - Configured Tailwind CSS
+- Header Component
 
 # Features
 
