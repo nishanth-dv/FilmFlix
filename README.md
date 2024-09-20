@@ -3,6 +3,8 @@
 - create-react-app
 - Configured Tailwind CSS
 - Header Component
+- Routing
+- SignUp / Login Form
 
 # Features
 

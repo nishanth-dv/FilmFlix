@@ -1,6 +1,7 @@
 import React from "react";
 import backgroundImage from "../assets/backgroung.jpg";
 import HeaderComponent from "./HeaderComponent";
+import LoginSignupComponent from "./LoginSignupComponent";
 
 const LoginComponent = () => {
   return (
@@ -9,6 +10,7 @@ const LoginComponent = () => {
       <div>
         <img src={backgroundImage} alt="bg-img" />
       </div>
+      <LoginSignupComponent />
     </div>
   );
 };
