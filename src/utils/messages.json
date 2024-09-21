@@ -1,0 +1,4 @@
+{
+  "auth/invalid-credential": "User doesn't exist / Invalid Credentials.",
+  "auth/too-many-requests": "Too many attempts! Try again later."
+}
