@@ -13,6 +13,9 @@
 - Setup redux toolkit (RTK)
 - Setup redux store
 - Create userSlice
+- Implement signout
+- Update profile
+- Fetch from TMDB Movies
 
 # Features
 

@@ -2,6 +2,9 @@ import React, { useState, useRef } from "react";
 import validateFormData from "../utils/formValidate";
 import authenticate from "../utils/authentication";
 import messages from "../utils/messages.json";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addUser } from "../utils/redux/storeSlices/userSlice";
 
 const LoginSignupComponent = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -10,6 +13,8 @@ const LoginSignupComponent = () => {
   const lastName = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const toggleForm = () => {
     setIsSignIn(!isSignIn);
@@ -34,6 +39,11 @@ const LoginSignupComponent = () => {
       email.current?.value,
       password.current?.value
     );
+    if (authInfo.userInfo) {
+      const { uid, email, displayName } = authInfo.userInfo;
+      dispatch(addUser({ uid, email, displayName }));
+      navigate("/Browse");
+    }
     if (authInfo.error)
       setErrorMessage(messages[authInfo.error?.errorCode] || "Error");
   };
@@ -52,12 +62,14 @@ const LoginSignupComponent = () => {
           <>
             <input
               ref={firstName}
+              required
               className="px-3 py-2 mb-5 bg-slate-800 font-normal"
               type="text"
               placeholder="Enter your First Name"
             />
             <input
               ref={lastName}
+              required
               className="px-3 py-2 mb-5 bg-slate-800 font-normal"
               type="text"
               placeholder="Enter your Last Name"
@@ -66,12 +78,14 @@ const LoginSignupComponent = () => {
         )}
         <input
           ref={email}
+          required
           className="px-3 py-2 mb-5 bg-slate-800 font-normal"
           type="email"
           placeholder="Email address"
         />
         <input
           ref={password}
+          required
           className="px-3 py-2 mb-5 bg-slate-800 font-normal"
           type="password"
           placeholder="Password"

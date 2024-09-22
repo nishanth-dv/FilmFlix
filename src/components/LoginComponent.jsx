@@ -5,24 +5,16 @@ import LoginSignupComponent from "./LoginSignupComponent";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "../utils/redux/storeSlices/userSlice";
-import { useNavigate } from "react-router-dom";
+import { removeUser } from "../utils/redux/storeSlices/userSlice";
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { uid, email, displayName } = user;
-        dispatch(addUser({ uid, email, displayName }));
-        navigate("/Browse");
-      } else {
-        dispatch(removeUser());
-      }
+      if (!user) dispatch(removeUser());
     });
-  }, [dispatch, navigate]);
+  }, [dispatch]);
 
   return (
     <div>
