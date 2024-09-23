@@ -3,7 +3,6 @@ import validateFormData from "../utils/formValidate";
 import authenticate from "../utils/authentication";
 import messages from "../utils/messages.json";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { addUser } from "../utils/redux/storeSlices/userSlice";
 
 const LoginSignupComponent = () => {
@@ -14,7 +13,6 @@ const LoginSignupComponent = () => {
   const email = useRef(null);
   const password = useRef(null);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const toggleForm = () => {
     setIsSignIn(!isSignIn);
@@ -42,7 +40,6 @@ const LoginSignupComponent = () => {
     if (authInfo.userInfo) {
       const { uid, email, displayName } = authInfo.userInfo;
       dispatch(addUser({ uid, email, displayName }));
-      navigate("/Browse");
     }
     if (authInfo.error)
       setErrorMessage(messages[authInfo.error?.errorCode] || "Error");
