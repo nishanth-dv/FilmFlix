@@ -12,7 +12,7 @@ const HeaderComponent = () => {
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubsribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid, email, displayName }));
@@ -23,6 +23,9 @@ const HeaderComponent = () => {
         navigate("/");
       }
     });
+
+    return () => unsubsribe();
+  
   }, [dispatch, navigate]);
 
   const handleSignout = () => {

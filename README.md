@@ -15,6 +15,7 @@
 - Create userSlice
 - Implement signout
 - Update profile
+- Register and create app in TMDB 
 - Fetch from TMDB Movies
 
 # Features
