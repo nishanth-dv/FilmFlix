@@ -15,8 +15,12 @@
 - Create userSlice
 - Implement signout
 - Update profile
-- Register and create app in TMDB 
+- Register and create app in TMDB
 - Fetch from TMDB Movies
+- Create nowPlayingMovieSlice
+- Custom hook for fetching now playing movies and store it in Redux store
+- Custom hook to fetch the youtube key to play background video in Browse page
+- Embedded the Youtube
 
 # Features
 
