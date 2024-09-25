@@ -13,7 +13,6 @@ function MainContainer() {
   const defaultMovie = movieDetails[0];
   const { id, title, overview } = defaultMovie;
 
-  console.log(id);
   return (
     <div>
       <VideoDetails title={title} overview={overview} />
