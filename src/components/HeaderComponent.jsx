@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import logo from "../assets/logo.png";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
@@ -25,7 +25,6 @@ const HeaderComponent = () => {
     });
 
     return () => unsubsribe();
-  
   }, [dispatch, navigate]);
 
   const handleSignout = () => {
@@ -42,15 +41,17 @@ const HeaderComponent = () => {
     <div className="absolute px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between">
       <img className="w-48 radiant" src={logo} alt="logo" />
       {user && (
-        <button
-          className="font-bold text-lg text-white"
-          onClick={handleSignout}
-        >
-          Sign out
-        </button>
+        <>
+          <button
+            className="font-bold text-lg text-white"
+            onClick={handleSignout}
+          >
+            Sign out
+          </button>
+        </>
       )}
     </div>
   );
 };
 
-export default HeaderComponent;
+export default memo(HeaderComponent);
