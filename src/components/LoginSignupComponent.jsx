@@ -20,7 +20,6 @@ const LoginSignupComponent = () => {
   };
 
   const validateData = async () => {
-    console.log(messages);
     const validateMessage = validateFormData(
       isSignIn ? "signin" : "signup",
       firstName.current?.value || null,

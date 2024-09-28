@@ -11,8 +11,8 @@ const TrailerPlayer = ({ movieId }) => {
   return (
     <div>
       <iframe
-        className="w-full aspect-video"
-        src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&autohide=1`}
+        className="w-full aspect-video pointer-events-none"
+        src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&iv_load_policy=3&autohide=1&loop=1&playlist=${trailerKey}`}
         title="YouTube video player"
         frameBorder="0"
         allowFullScreen
