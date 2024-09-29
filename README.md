@@ -20,7 +20,12 @@
 - Create nowPlayingMovieSlice
 - Custom hook for fetching now playing movies and store it in Redux store
 - Custom hook to fetch the youtube key to play background video in Browse page
-- Embedded the Youtube
+- Embedded youtube component with iframe
+- Movie Categories displayed are
+  - Now Playing
+  - Popular
+  - Top Rated
+  - Upcoming
 
 # Features
 
