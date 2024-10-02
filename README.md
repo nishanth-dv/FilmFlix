@@ -26,6 +26,7 @@
   - Popular
   - Top Rated
   - Upcoming
+- GPT Component
 
 # Features
 

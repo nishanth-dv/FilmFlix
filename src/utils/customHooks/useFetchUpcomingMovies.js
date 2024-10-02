@@ -14,7 +14,7 @@ const useFetchUpComingMovies = () => {
 
       dispatch(
         addOtherMovies({
-          category: "TopRated",
+          category: "Upcoming",
           movies: formattedResponse.results,
         })
       );
