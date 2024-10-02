@@ -9,7 +9,7 @@ const GPTSuggestions = () => {
     <Scrollbars style={{ width: "100%", height: "70vh" }}>
       <div className="bg-black p-5 m-5 rounded-lg bg-opacity-80">
         {movieNames?.map((movie, index) => (
-          <MovieList title={movie} movies={movieList[index]} />
+          <MovieList key={movie} title={movie} movies={movieList[index]} />
         ))}
       </div>
     </Scrollbars>
