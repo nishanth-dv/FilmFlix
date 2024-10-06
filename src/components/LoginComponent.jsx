@@ -7,7 +7,7 @@ const LoginComponent = () => {
     <div>
       <HeaderComponent />
       <div>
-        <img src={backgroundImage} alt="bg-img" />
+        <img className="h-screen object-cover md:h-auto" src={backgroundImage} alt="bg-img" />
       </div>
       <LoginSignupComponent />
     </div>

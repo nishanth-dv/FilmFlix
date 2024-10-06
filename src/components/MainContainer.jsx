@@ -14,7 +14,7 @@ function MainContainer() {
   const { id, title, overview } = defaultMovie;
 
   return (
-    <div>
+    <div className="pt-[25%] bg-black md:pt-0">
       <VideoDetails title={title} overview={overview} />
       <TrailerPlayer movieId={id} />
     </div>

@@ -45,7 +45,7 @@ const LoginSignupComponent = () => {
   };
 
   return (
-    <div className="absolute top-1/4 left-[40%] p-10 bg-black w-1/4 text-white rounded-lg h-3/4 bg-opacity-85 font-semibold">
+    <div className="absolute top-[10%] left-[15%] p-10 bg-black w-3/4 text-white rounded-lg h-3/4 bg-opacity-85 font-semibold md:w-1/4 md:left-[40%] md:top-1/4">
       <form
         className="flex flex-col"
         onSubmit={(event) => {
@@ -53,7 +53,7 @@ const LoginSignupComponent = () => {
           validateData();
         }}
       >
-        <p className="text-3xl mb-5">Sign In</p>
+        <p className="text-2xl mb-5 md:text-3xl">Sign In</p>
         {!isSignIn && (
           <>
             <input
