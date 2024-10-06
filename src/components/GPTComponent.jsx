@@ -5,13 +5,15 @@ import backgroundImage from "../assets/backgroung.jpg";
 
 const GPTComponent = () => {
   return (
-    <div>
-      <div className="absolute -z-10">
-        <img src={backgroundImage} alt="bg-img" />
+    <>
+      <div className="fixed -z-10">
+        <img className="h-screen object-cover md:h-auto" src={backgroundImage} alt="bg-img" />
       </div>
-      <GPTInput />
-      <GPTSuggestions />
-    </div>
+      <div>
+        <GPTInput />
+        <GPTSuggestions />
+      </div>
+    </>
   );
 };
 

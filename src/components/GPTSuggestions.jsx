@@ -6,13 +6,13 @@ import Scrollbars from "react-custom-scrollbars";
 const GPTSuggestions = () => {
   const { movieNames, movieList } = useSelector((state) => state.gpt);
   return movieList ? (
-    <Scrollbars style={{ width: "100%", height: "70vh" }}>
-      <div className="bg-black p-5 m-5 rounded-lg bg-opacity-80">
+    <div className="bg-black m-5 rounded-lg bg-opacity-80 md:p-5">
+      <Scrollbars style={{ width: "100%", height: "70vh" }}>
         {movieNames?.map((movie, index) => (
           <MovieList key={movie} title={movie} movies={movieList[index]} />
         ))}
-      </div>
-    </Scrollbars>
+      </Scrollbars>
+    </div>
   ) : (
     <></>
   );

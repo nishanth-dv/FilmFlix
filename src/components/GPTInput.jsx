@@ -53,31 +53,31 @@ const GPTInput = () => {
 
   return (
     <>
-      <div className="pt-[10%] flex justify-center">
+      <div className="pt-[35%] flex justify-center md:pt-[10%]">
         <form
-          className="w-1/2 bg-black grid grid-cols-12 rounded-lg"
+          className="w-full mx-4 bg-black grid grid-cols-12 rounded-lg md:w-1/2 md:mx-0"
           onSubmit={(event) => event.preventDefault()}
         >
           <input
             type="text"
             ref={searchText}
-            className="px-4 m-4 col-span-9 rounded-lg"
+            className="px-4 py-1 m-2 text-sm col-span-9 rounded-lg md:m-4"
             placeholder="What would you like to watch today?"
           />
           <button
             onClick={handleSearch}
-            className="col-span-3 m-4 py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg"
+            className="col-span-3 m-2 py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg md:m-4 md:flex md:justify-center md:items-center"
           >
-            <i className="fa-brands fa-searchengin mr-2" />
-            Search
+            <i className="fa-brands fa-searchengin md:mr-2" />
+            <span className="hidden md:block">Search</span>
           </button>
         </form>
       </div>
       {showError && (
         <div className="pt-4 flex justify-center mb-5">
-          <div className="w-1/2 py-4 px-3 mx-5 border border-yellow-600 bg-yellow-500 bg-opacity-90 rounded-lg flex justify-center items-center text-white font-semibold text-md">
+          <div className="w-full py-4 px-3 mx-5 border border-yellow-600 bg-yellow-500 bg-opacity-90 rounded-lg flex justify-center items-center text-white font-semibold text-xs md:w-1/2 md:text-md">
             <i className="fa-solid fa-circle-info mr-2" />
-            <p>While we fix our service, Enjoy some of our recommendation!</p>
+            <p>While we fix our service, Enjoy some of our recommendations!</p>
           </div>
         </div>
       )}

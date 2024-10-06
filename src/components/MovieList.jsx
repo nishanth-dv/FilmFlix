@@ -4,12 +4,13 @@ import Scrollbars from "react-custom-scrollbars";
 
 const MovieList = ({ title, movies }) => {
   if (!movies) return;
+  const isMediumScreen = window.innerWidth >= 768;
 
   return (
     <div className="px-6">
-      <h1 className="text-3xl py-4 text-white">{title}</h1>
+      <h1 className="py-4 text-white md:text-3xl">{title}</h1>
       <Scrollbars
-        style={{ height: "223px" }}
+        style={{ height: isMediumScreen ? "223px" : "175px" }}
         renderThumbVertical={() => <div style={{ display: "none" }} />}
         renderThumbHorizontal={(props) => (
           <div

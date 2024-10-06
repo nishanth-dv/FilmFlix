@@ -44,12 +44,12 @@ const HeaderComponent = () => {
   };
 
   return (
-    <div className="absolute px-8 py-2 bg-gradient-to-b from-black w-full flex justify-between">
-      <img className="w-48 radiant" src={logo} alt="logo" />
+    <div className="absolute px-8 py-2 bg-gradient-to-b from-black w-full flex flex-col justify-between md:flex-row">
+      <img className="w-40 mx-auto h-16 md:mx-0 md:w-48 md:h-auto" src={logo} alt="logo" />
       {user && (
-        <div className="px-8 py-2 flex">
+        <div className="px-8 flex md:py-2">
           <button
-            className="font-xs text-white px-4 my-4 mr-4 bg-purple-800 rounded-lg hover:bg-purple-900"
+            className="font-xs text-white px-4 py-2 my-4 mr-4 bg-purple-800 rounded-lg hover:bg-purple-900"
             onClick={handleToggleView}
           >
             {gpt.showGpt ? (
